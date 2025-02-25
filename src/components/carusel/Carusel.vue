@@ -99,7 +99,7 @@ const selectImage = (index: number) => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
   padding: 10px;
   background-color: #f7f7f7;
   border-radius: 10px;
@@ -194,12 +194,13 @@ const selectImage = (index: number) => {
   display: flex;
   flex-wrap: wrap;
 }
-@media(max-width: 768px) {
+@media (min-width: 420px) and (max-width: 768px){
   .carousel-button.prev {
     position: absolute;
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
+    opacity: 0.6;
   }
 
   .carousel-button.next {
@@ -207,6 +208,7 @@ const selectImage = (index: number) => {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
+    opacity: 0.6;
   }
 }
 </style>
