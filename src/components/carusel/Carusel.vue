@@ -79,14 +79,14 @@ const selectImage = (index: number) => {
           @click="selectImage(index)"
         />
       </div>
-      <div>
+      <div class="button-wrapper">
         <button @click="prev" class="carousel-button prev">Prev</button>
         <button @click="next" class="carousel-button next">Next</button>
       </div>
     </div> 
     <div class="selected-images">
       <h2>Selected Images:</h2>
-      <ul>
+      <ul class="list-images">
         <li v-for="(image, index) in selectedImages" :key="index">
           <img :src="image" alt="Selected image" />
         </li>
@@ -112,6 +112,7 @@ const selectImage = (index: number) => {
   position: relative;
   overflow: hidden;
   flex-direction: column;
+  gap: 5px;
 }
 
 .carousel-images {
@@ -185,36 +186,27 @@ const selectImage = (index: number) => {
   width: 20%; 
 }
 
-.carousel-button.prev {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.carousel-button.next {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Mobile schema */
-.mobile-carousel {
+.button-wrapper{
   display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
+  gap: 30px;
 }
-
-.mobile-carousel img {
-  width: 100%; 
-  height: auto;
-  transition: transform 0.3s ease-in-out;
+.list-images{
+  display: flex;
+  flex-wrap: wrap;
 }
+@media(max-width: 768px) {
+  .carousel-button.prev {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-.mobile-carousel img:hover {
-  transform: scale(1.05);
+  .carousel-button.next {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 </style>
