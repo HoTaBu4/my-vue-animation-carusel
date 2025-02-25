@@ -179,7 +179,7 @@ const selectImage = (index: number) => {
 }
 
 .selected-images img:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
 
 .desktop .carousel-image {
